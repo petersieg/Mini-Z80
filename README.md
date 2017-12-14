@@ -28,5 +28,5 @@ Ram = 62256  32k SRam
 
 ACHTUNG: Die Eagle PCB enthält Fehler! Bitte PDF lesen und beachten!
 
-EDIT: z80 mini pcb corrected.zip enthselt eine fehlerbereinigte Version inkl. Elecrow Gerber Dateien. Masse: 100x66mm.
+EDIT: z80 mini pcb corrected.zip enthaelt eine fehlerbereinigte Version inkl. Elecrow Gerber Dateien. Masse: 100x66mm.
 ABER!! Diese, korrigierte Version ist NICHT getestet!!
