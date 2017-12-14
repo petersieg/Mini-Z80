@@ -11,7 +11,7 @@ ausholen. Wuerfel; Mastermind; 4 gewinnt oder im
 Prinzip sogar ein Schachspiel sollten moeglich sein.
 
 Pin 16,17,24,25 der Z80 CPU an +5V legen - und GND 
-+ VCC ebenfalls nicht vergessen.
+u. VCC ebenfalls nicht vergessen.
 In der Lektuere "Mikrocomputer selbstgebaut und pro
 grammiert" von Rolf Dieter Klein (SEHR empfehlenswe
 rt!) und verschiedenen Z80 Systemen aus dem Internet 
