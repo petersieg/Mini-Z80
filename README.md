@@ -26,3 +26,4 @@ Rom = 27C256 32k Eprom
 
 Ram = 62256  32k SRam
 
+ACHTUNG: Die Eagle PCB enthält Fehler! Bitte PDF lesen und beachten!
