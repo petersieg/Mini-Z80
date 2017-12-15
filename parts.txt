@@ -1,0 +1,43 @@
+Partlist
+
+Exported from z80 mini.brd at 15.12.2017 19:54:22
+
+EAGLE Version 6.5.0 Copyright (c) 1988-2013 CadSoft
+
+Assembly variant: 
+
+Part     Value          Package      Library       Position (inch)       Orientation
+
+C1       100n           C025-025X050 resistor      (2.85 1.2)            R90
+C2       100n           C025-025X050 resistor      (2.4 3.05)            R0
+C3       100n           C025-025X050 resistor      (1.5 3.05)            R0
+C4       100n           C025-025X050 resistor      (0.65 3.05)           R0
+C5       100n           C025-025X050 resistor      (2.85 1.75)           R90
+C6       1n             C025-025X050 resistor      (1.1 0.9)             R0
+IC1      27256          DIL28        0RB_Memory    (1.5 2.3)             R270
+IC2      62256          DIL28        0RB_Memory    (2.4 2.3)             R270
+IC3      74244          DIL20        0RB_TTL       (3.4 1.2)             R0
+IC4      Z80CPU         DIL40        0RB_Zilog     (0.65 2)              R270
+IC5      4093N          DIL14        40xx          (1.5 1.2)             R0
+IC6      74HCT32N       DIL14        74xx-eu       (2.4 1.2)             R0
+IC7      74HCT374N      DIL20        74xx-eu       (3.4 1.75)            R0
+IN                      1X08         pinhead       (3.35 0.8)            R180
+LED1     LA-401AD       LA-401       led-7-segment (3.4 2.8)             R90
+LED2     green          LED3MM       led           (0.15 2.7)            R0
+LED3     red            LED3MM       led           (0.15 2.45)           R0
+LED4     yellow         LED3MM       led           (0.15 2.2)            R0
+OUT                     1X08         pinhead       (3.35 2.1)            R0
+PWR                     JP1          jumper        (0.15 2.95)           R90
+R1       10k            0204/7       resistor      (1.45 0.9)            R0
+R2       560            0204/7       resistor      (3 2.4)               R90
+R3       560            0204/7       resistor      (3.1 2.4)             R90
+R4       560            0204/7       resistor      (3.2 2.4)             R90
+R5       560            0204/7       resistor      (3.6 2.4)             R90
+R6       560            0204/7       resistor      (3.5 2.4)             R90
+R7       560            0204/7       resistor      (3.3 2.4)             R90
+R8       560            0204/7       resistor      (3.4 2.4)             R90
+R9       560            0204/7       resistor      (0.2 1.8)             R90
+R10      560            0204/7       resistor      (0.1 1.8)             R90
+R11      560            0204/7       resistor      (0.1 1.35)            R90
+R12      10k            0204/7       resistor      (0.2 1.35)            R270
+RES                     JP1          jumper        (0.15 1.1)            R90
