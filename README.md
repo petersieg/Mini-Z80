@@ -31,6 +31,10 @@ ACHTUNG: Die Eagle PCB enthält Fehler! Bitte PDF lesen und beachten!
 EDIT: z80 mini pcb corrected.zip enthaelt eine fehlerbereinigte Version inkl. Elecrow Gerber Dateien. Masse: 100x66mm.
 ABER!! Diese, korrigierte Version ist NICHT getestet!!
 
+Die beschriebenen Testprogramme sind im z80 mini software.zip
+
+Als Assembler diente der Arnold Assembler: http://john.ccac.rwth-aachen.de:8000/as/
+
 Warum gerade/genau diese Version?
 
 Nun ich wollte einen Z80 Einplatinenrechner:
