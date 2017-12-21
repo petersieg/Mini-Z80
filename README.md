@@ -30,3 +30,20 @@ ACHTUNG: Die Eagle PCB enthält Fehler! Bitte PDF lesen und beachten!
 
 EDIT: z80 mini pcb corrected.zip enthaelt eine fehlerbereinigte Version inkl. Elecrow Gerber Dateien. Masse: 100x66mm.
 ABER!! Diese, korrigierte Version ist NICHT getestet!!
+
+Warum gerade/genau diese Version?
+
+Nun ich wollte einen Z80 Einplatinenrechner:
+
+* der nur Standardbauteile und keinen programmierbaren Hilfschip (Propeller, AVR, ..) hat. Also nur CPU, Ram, Rom, TTL.
+* der keine Video, Tastatur (z.B. PS/2) und auch keine serielle Anbindung hatte. I/O nur 'statisch' - 8-bit.
+* der Takt sollte ggf. auch weit herunter zu takten sein.
+* er sollte einfach, nachvollziehbar, gut zu testen sein.
+* bare metal programmierbar - ohne Monitorprogramm.
+
+Daher ist er so, wie er ist ;-)
+
+Man kann sich trotzdem z.B. obige Erweiterungen vorstellen. Z.B. sollte es möglich sein, einen AVR an den I/O Port + /IO + /WR + /RD
+anzuschließen um von dort dann eine serielle Schnittstelle abzubilden. Mit einem Monitorprogramm im Rom, wäre dann serielle Bedienung
+und Upload von Programmen ins Ram denkbar.
+
