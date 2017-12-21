@@ -1,5 +1,7 @@
 # Mini-Z80
 
+![Bild](Mini Z80.jpg)
+
 Nach dem Z80 Tester wollte ich schon lange mal ein 
 richtiges, minimales Z80 System (Einplatinencomputer)
 bauen. Ein bestimmtes Ziel sollte das System nicht 
