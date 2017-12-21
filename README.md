@@ -22,7 +22,7 @@ folgender Startkonfiguration entschieden.
 
 Z80 CPU
 
-4093 Oszillator (R=10k; C=1nf; f=ca. 500khz)
+4093 Oszillator (R=10k; C=1nf; f=ca. 500khz): http://www.janson-soft.de/pe/pek08.pdf
 
 Rom = 27C256 32k Eprom
 
