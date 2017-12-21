@@ -1,6 +1,6 @@
 # Mini-Z80
 
-![Bild](Mini Z80.jpg)
+![Bild](https://github.com/petersieg/Mini-Z80/blob/master/Mini%20Z80.jpg)
 
 Nach dem Z80 Tester wollte ich schon lange mal ein 
 richtiges, minimales Z80 System (Einplatinencomputer)
