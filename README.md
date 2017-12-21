@@ -15,8 +15,8 @@ Prinzip sogar ein Schachspiel sollten moeglich sein.
 Pin 16,17,24,25 der Z80 CPU an +5V legen - und GND 
 u. VCC ebenfalls nicht vergessen.
 In der Lektuere "Mikrocomputer selbstgebaut und pro
-grammiert" von Rolf Dieter Klein (SEHR empfehlenswe
-rt!) und verschiedenen Z80 Systemen aus dem Internet 
+grammiert" von Rolf Dieter Klein (SEHR empfehlenswert!) 
+und verschiedenen Z80 Systemen aus dem Internet 
 (http://www.z80.info/z80_mp.htm), habe ich mich zu
 folgender Startkonfiguration entschieden.
 
