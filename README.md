@@ -33,6 +33,10 @@ ACHTUNG: Die Eagle PCB enthält Fehler! Bitte PDF lesen und beachten!
 EDIT: z80 mini pcb corrected.zip enthaelt eine fehlerbereinigte Version inkl. Elecrow Gerber Dateien. Masse: 100x66mm.
 ABER!! Diese, korrigierte Version ist NICHT getestet!!
 
+EDIT2: Neue PCB aufgebaut und getestet - alles ist nun ok! Daher bitte NUR die neue PCB verwenden!
+Anstatt 27C256 sollte sich der Pinkompatible AT29C256 Flash verwenden können.
+Beim AT28C256 sind Änderungen erforderlich (A14 umlegen + /WE auf +5V legen)
+
 Die beschriebenen Testprogramme sind im z80 mini software.zip
 
 Als Assembler diente der Arnold Assembler: http://john.ccac.rwth-aachen.de:8000/as/
