@@ -41,6 +41,14 @@ Die beschriebenen Testprogramme sind im z80 mini software.zip
 
 Als Assembler diente der Arnold Assembler: http://john.ccac.rwth-aachen.de:8000/as/
 
+Batch-Datei zum assemblieren:
+
+..\as\bin\as %1 -L
+
+..\as\bin\p2bin %1 -r $-$
+
+---
+
 Warum gerade/genau diese Version?
 
 Nun ich wollte einen Z80 Einplatinenrechner:
