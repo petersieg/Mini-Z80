@@ -49,6 +49,14 @@ Batch-Datei zum assemblieren:
 
 ---
 
+Unter Linux ist auch schöne geeignet Z80-ASM:
+
+http://wwwhomes.uni-bielefeld.de/achim/z80-asm.html
+
+Das Paket hat mit z80-mon auch einen schönen Simulator/Debugger.
+
+---
+
 Warum gerade/genau diese Version?
 
 Nun ich wollte einen Z80 Einplatinenrechner:
