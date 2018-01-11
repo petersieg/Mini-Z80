@@ -49,9 +49,15 @@ Batch-Datei zum assemblieren:
 
 ---
 
-Unter Linux ist auch schöne geeignet Z80-ASM:
+Unter Linux ist auch schön geeignet Z80-ASM:
 
 http://wwwhomes.uni-bielefeld.de/achim/z80-asm.html
+
+z80-asm -l test3.asm :test.z80 >test3.lst
+
+Die Datei *.z80 enthält einen 10 Byte Header, den man vor dem Brennen in einem Eprom noch entfernen muss!
+
+File Extensionen (.asm u. .z80) müssen angegeben werden!
 
 Das Paket hat mit z80-mon auch einen schönen Simulator/Debugger.
 
