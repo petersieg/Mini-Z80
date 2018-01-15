@@ -1,0 +1,2 @@
+#!/bin/sh
+dd if=$1.z80 of=$1.bin bs=1 skip=10
