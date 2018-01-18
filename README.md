@@ -66,6 +66,13 @@ File Extensionen (.asm u. .z80) müssen angegeben werden!
 
 Das Paket hat mit z80-mon auch einen schönen Simulator/Debugger.
 
+b2s.c compiliert wandelt eine Binärdatei in Hex-Kommandos für den Arduino Mega EEprommer:
+
+b2s test3.bin >test3.eep  => (Waaa:dddddddd...)
+
+Damit kann man auch EEprommer.exe oder Python Script ein Eprom z.B. mittels minicom brennen.
+(Datei einfügen)
+
 ---
 
 Warum gerade/genau diese Version?
