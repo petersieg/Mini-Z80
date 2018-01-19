@@ -70,7 +70,7 @@ b2s.c compiliert wandelt eine Binärdatei in Hex-Kommandos für den Arduino Mega
 
 b2s test3.bin >test3.eep  => (Waaa:dddddddd...)
 
-Damit kann man auch EEprommer.exe oder Python Script ein Eprom z.B. mittels minicom brennen.
+Damit kann man auch ohne EEprommer.exe oder Python Script ein Eprom z.B. mittels minicom brennen.
 (Datei einfügen)
 
 ---
