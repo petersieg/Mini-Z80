@@ -1,0 +1,223 @@
+0000                1 
+0000                2 	org 0
+0000                3 ;
+0000                4 ; read inport direct after reset to determine which program to run
+0000 db 00          5         in a,(0)
+0002 fe fe          6 	cp 0feh
+0004 ca c7 00       7 	jp z,ramtst	; ram test - test 32k ram chip with 0x55, 0xaa. halt on any error
+0007 fe fd          8 	cp 0fdh
+0009 ca 50 00       9 	jp z,iotst	; io test - just mirror inport to outport
+000c fe fc         10 	cp 0fch
+000e ca 57 00      11 	jp z,dice	; roll a dice results in show 1..6
+0011               12 ;
+0011               13 ; fall though to hello program if no switch it set 
+0011               14 ;---------------------------------------------
+0011               15 ; welcome msg 'HELLo USEr'
+0011 3a 3d 01      16 hello:	ld a,(ledh)
+0014 cd fd 00      17 	call outchr
+0017               18 
+0017 3a 3a 01      19 	ld a,(lede)
+001a cd fd 00      20 	call outchr
+001d               21 
+001d 3a 41 01      22 	ld a,(ledl)
+0020 cd fd 00      23 	call outchr
+0023               24 
+0023 3a 41 01      25 	ld a,(ledl)
+0026 cd fd 00      26 	call outchr
+0029               27 
+0029 3a 44 01      28 	ld a,(ledo)
+002c cd fd 00      29 	call outchr
+002f               30 
+002f cd 0f 01      31 	call outspc
+0032               32 
+0032 3a 4a 01      33 	ld a,(ledu)
+0035 cd fd 00      34 	call outchr
+0038               35 
+0038 3a 48 01      36 	ld a,(leds)
+003b cd fd 00      37 	call outchr
+003e               38 
+003e 3a 3a 01      39 	ld a,(lede)
+0041 cd fd 00      40 	call outchr
+0044               41 
+0044 3a 47 01      42 	ld a,(ledr)
+0047 cd fd 00      43 	call outchr
+004a               44 
+004a cd 0f 01      45 	call outspc
+004d c3 11 00      46 	jp hello
+0050               47 
+0050               48 ;---------------------------------------------
+0050               49 iotst:
+0050 db 00         50         in a,(0)
+0052 d3 00         51         out (0),a
+0054 c3 50 00      52 	jp iotst
+0057               53 
+0057               54 ;---------------------------------------------
+0057               55 dice:
+0057 3a 34 01      56 	ld a,(ledmin)	; show '-' to wait for input 0xff (all switches off)
+005a d3 00         57 	out (0),a
+005c db 00         58 dice2:	in a,(0)
+005e fe ff         59 	cp 0ffh
+0060 c2 5c 00      60 	jp nz,dice2	; if in is not 0xff, wait..
+0063 3a 35 01      61 	ld a,(ledspc)	; clear '-'; start 'rolling a dice'
+0066 d3 00         62 	out (0),a
+0068 06 00         63 dice3:	ld b,0
+006a 04            64 dice4:	inc b
+006b 78            65 	ld a,b
+006c fe 06         66 	cp 6		; if 6 -> 
+006e ca 68 00      67 	jp z,dice3	; -> reset to 0 (we only want 0..5)
+0071 db 00         68 	in a,(0)	; check if any switch is on (in != 0xff)
+0073 fe ff         69 	cp 0ffh
+0075 ca 6a 00      70 	jp z,dice4	; no switch - continue inc b..
+0078 04            71 	inc b		; here: any switch was triggered; b is now 1..6
+0079 78            72 	ld a,b		; out led 6
+007a fe 06         73 	cp 6
+007c c2 87 00      74 	jp nz,dice5
+007f 3a 30 01      75 	ld a,(led6)
+0082 d3 00         76 	out (0),a
+0084 c3 5c 00      77 	jp dice2	; another roll the dice..
+0087 78            78 dice5:	ld a,b		; out led 5
+0088 fe 05         79 	cp 5
+008a c2 95 00      80 	jp nz,dice6
+008d 3a 2f 01      81 	ld a,(led5)
+0090 d3 00         82 	out (0),a
+0092 c3 5c 00      83 	jp dice2	; another roll the dice..
+0095 78            84 dice6:	ld a,b		; out led 4
+0096 fe 04         85 	cp 4
+0098 c2 a3 00      86 	jp nz,dice7
+009b 3a 2e 01      87 	ld a,(led4)
+009e d3 00         88 	out (0),a
+00a0 c3 5c 00      89 	jp dice2	; another roll the dice..
+00a3 78            90 dice7:	ld a,b		; out led 3
+00a4 fe 03         91 	cp 3
+00a6 c2 b1 00      92 	jp nz,dice8
+00a9 3a 2d 01      93 	ld a,(led3)
+00ac d3 00         94 	out (0),a
+00ae c3 5c 00      95 	jp dice2	; another roll the dice..
+00b1 78            96 dice8:	ld a,b		; out led 2
+00b2 fe 02         97 	cp 2
+00b4 c2 bf 00      98 	jp nz,dice9
+00b7 3a 2c 01      99 	ld a,(led2)
+00ba d3 00        100 	out (0),a
+00bc c3 5c 00     101 	jp dice2	; another roll the dice..
+00bf 3a 2b 01     102 dice9:	ld a,(led1)	; out led 1
+00c2 d3 00        103 	out (0),a
+00c4 c3 5c 00     104 	jp dice2	; another roll the dice..
+00c7              105 
+00c7              106 
+00c7              107 ;---------------------------------------------
+00c7 01 2a 01     108 ramtst:	ld bc,led0	;bc points to ledn
+00ca 16 0a        109 	ld d,10		;count runs 0-9 loop
+00cc 0a           110 	ld a,(bc)
+00cd              111 ;	ld a,(led0)	;11000000b
+00cd d3 00        112         out (0),a
+00cf              113 rambeg:
+00cf 21 00 80     114 	ld hl,08000h	;mem start
+00d2              115 ramtst2:
+00d2 3e 55        116 	ld a,55h
+00d4 77           117 	ld (hl),a
+00d5 7e           118         ld a,(hl)
+00d6 fe 55        119         cp 55h
+00d8 c2 fc 00     120         jp nz,fail
+00db 3e aa        121         ld a,0aah
+00dd 77           122         ld (hl),a
+00de 7e           123         ld a,(hl)
+00df fe aa        124         cp 0aah
+00e1 c2 fc 00     125         jp nz,fail
+00e4              126 
+00e4 23           127         inc hl		;mem end ffffh -> 0
+00e5 7c           128         ld a,h
+00e6 fe 00        129         cp 0
+00e8 c2 d2 00     130         jp nz,ramtst2
+00eb 7d           131         ld a,l
+00ec fe 00        132         cp 0
+00ee c2 d2 00     133         jp nz,ramtst2
+00f1              134 
+00f1 15           135 	dec d
+00f2 ca c7 00     136 	jp z,ramtst
+00f5 03           137 	inc bc		;bc points no next ledn code
+00f6 0a           138 	ld a,(bc)
+00f7 d3 00        139         out (0),a
+00f9 c3 cf 00     140         jp rambeg
+00fc              141 
+00fc 76           142 fail:   halt
+00fd              143 
+00fd              144 outchr:			;A contains led value
+00fd 1e 14        145 	ld e,20		;delay value char	
+00ff d3 00        146         out (0),a
+0101 cd 1a 01     147 	call delaye
+0104 1e 05        148 	ld e,5		;some blank time after each char
+0106 3a 35 01     149 	ld a,(ledspc)
+0109 d3 00        150 	out (0),a	;blank
+010b cd 1a 01     151 	call delaye
+010e c9           152 	ret
+010f              153 
+010f 1e 64        154 outspc: ld e,100
+0111 3a 35 01     155 	ld a,(ledspc)
+0114 d3 00        156 	out (0),a	;blank
+0116 cd 1a 01     157 	call delaye
+0119 c9           158 	ret
+011a              159 
+011a cd 22 01     160 delaye: call delay1	;256 x NOP
+011d 1d           161         dec e
+011e c2 1a 01     162         jp nz,delaye    ;times e
+0121 c9           163         ret
+0122              164 
+0122 3e 00        165 delay1: ld a,0		;256 x NOP; A is destroyed
+0124 00           166 del11:  nop
+0125 3c           167         inc a
+0126 c2 24 01     168         jp nz,del11
+0129 c9           169 del12:  ret
+012a              170 
+012a              171 ;ledX   defb  1gfedcbab     --a--
+012a              172 ;                           |   |
+012a              173 ;                           f   b
+012a              174 ;                           |   |
+012a              175 ;                           --g--
+012a              176 ;                           |   |
+012a              177 ;                           e   c
+012a              178 ;                           |   |
+012a              179 ;                           --d--
+012a              180 ;
+012a c0           181 led0:	defb  11000000b     ; 0: c0h a, b, c, d, e, f
+012b f9           182 led1:	defb  11111001b     ; 1: f9h b, c
+012c a4           183 led2:	defb  10100100b     ; 2: a4h a, b, d, e, g
+012d b0           184 led3:	defb  10110000b     ; 3: b0h a, b, c, d, g
+012e 99           185 led4:	defb  10011001b     ; 4: 99h b, c, f, g
+012f 92           186 led5:	defb  10010010b     ; 5: 92h a, c, d, f, g
+0130 82           187 led6:	defb  10000010b     ; 6: 82h a, c, d, e, f, g
+0131 f8           188 led7:	defb  11111000b     ; 7: f8h a, b, c
+0132 80           189 led8:	defb  10000000b     ; 8: 80h a, b, c, d, e, f, g
+0133 90           190 led9:	defb  10010000b     ; 9: 90h a, b, c, d, f, g
+0134              191 
+0134 bf           192 ledmin: defb  10111111b     ; -: bfh g
+0135 ff           193 ledspc:	defb  11111111b     ;  : ffh
+0136              194 
+0136 88           195 leda:   defb  10001000b     ; A: 88h a, b, c, e, f, g
+0137 83           196 ledb:   defb  10000011b     ; b: 83h c, d, e, f, g
+0138 c6           197 ledc:   defb  11000110b     ; C: c6h a, d, e, f
+0139 a1           198 ledd:   defb  10100001b     ; d: a1h b, c, d, e, g
+013a 86           199 lede:   defb  10000110b     ; E: 86h a, d, e, f, g
+013b 88           200 ledf:   defb  10001000b     ; 
+013c 88           201 ledg:   defb  10001000b     ; 
+013d 89           202 ledh:   defb  10001001b     ; H: 89h b, c, e, f, g
+013e 88           203 ledi:   defb  10001000b     ; 
+013f 88           204 ledj:   defb  10001000b     ; 
+0140 88           205 ledk:   defb  10001000b     ; 
+0141 c7           206 ledl:   defb  11000111b     ; L: c7h d, e, f
+0142 88           207 ledm:   defb  10001000b     ; 
+0143 88           208 ledn:   defb  10001000b     ; 
+0144 a3           209 ledo:   defb  10100011b     ; o: a3h c, d, e, g 
+0145 88           210 ledp:   defb  10001000b     ; 
+0146 88           211 ledq:   defb  10001000b     ; 
+0147 af           212 ledr:   defb  10101111b     ; r: afh e, g
+0148 92           213 leds:   defb  10010010b     ; S: 92h a, c, d, f, g
+0149 88           214 ledt:   defb  10001000b     ; 
+014a c1           215 ledu:   defb  11000001b     ; U: c1h b, c, d, e ,f
+014b 88           216 ledv:   defb  10001000b     ; 
+014c 88           217 ledw:   defb  10001000b     ; 
+014d 88           218 ledx:   defb  10001000b     ; 
+014e 88           219 ledy:   defb  10001000b     ; 
+014f 88           220 ledz:   defb  10001000b     ; 
+0150              221 
+0150              222         end
+336 bytes code generated and 59 labels defined
