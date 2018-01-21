@@ -1,4 +1,4 @@
-# z80-asm package cimpiles for win32
+# z80-asm package compiled for win32/XP
 
 Here you can find win32 files for z80-asm package compiled with latest cygwin package for windows xp.
 
