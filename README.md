@@ -88,6 +88,7 @@ Daher ist er so, wie er ist ;-)
 Man kann sich trotzdem z.B. obige Erweiterungen vorstellen. Z.B. sollte es möglich sein, einen AVR an den I/O Port + /IO + /WR + /RD
 anzuschließen um von dort dann eine serielle Schnittstelle abzubilden. Mit einem Monitorprogramm im Rom, wäre dann serielle Bedienung
 und Upload von Programmen ins Ram denkbar.
+Anstatt 7-Segment kann man sich LCD im 4-bit Modus vorstellen etc. pp.
 
 Das evtl. schwieriger zu lokalisierende Bauteile dürfte heute die 7-Segmentanzeige sein. Jede kompatible, baugleiche sollte gehen. Wichtig sind Pinout und gemeinsame Anode.
 Ich habe zuletzt GNS-3611BD genommen (Wichtig: B!). Ich habe davor von Conrad: Kingbright: SA36-11GWA gruen und SA36-11SRWA rot verwendet (gemeinsame Anode).
