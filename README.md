@@ -6,8 +6,7 @@ Nach dem Z80 Tester wollte ich schon lange mal ein
 richtiges, minimales Z80 System (Einplatinencomputer)
 bauen. Ein bestimmtes Ziel sollte das System nicht 
 verfolgen. Hauptsache Z80, Rom, Ram und I/O.
-Ideal zum reinschnuppern und um ggf. mal spaeter mi
-t Logikanalyzer dran zu arbeiten. Trotz alle dem, 
+Ideal zum reinschnuppern und um ggf. mal spaeter mit Logikanalyzer dran zu arbeiten. Trotz alle dem, 
 kann man schon ein Menge aus so einem kleinem System her
 ausholen. Wuerfel; Mastermind; 4 gewinnt oder im
 Prinzip sogar ein Schachspiel sollten moeglich sein.
