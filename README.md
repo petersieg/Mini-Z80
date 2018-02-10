@@ -91,3 +91,9 @@ Man kann sich trotzdem z.B. obige Erweiterungen vorstellen. Z.B. sollte es mögl
 anzuschließen um von dort dann eine serielle Schnittstelle abzubilden. Mit einem Monitorprogramm im Rom, wäre dann serielle Bedienung
 und Upload von Programmen ins Ram denkbar.
 
+Das evtl. schwieriger zu lokalisierende Bauteile dürfte heute die 7-Segmentanzeige sein. Jede kompatible, baugleiche sollte gehen. Wichtig sind Pinout und gemeinsame Anode.
+Ich habe zuletzt GNS-3611BD genommen (Wichtig: B!). Ich habe davor von Conrad: Kingbright: SA36-11GWA gruen und SA36-11SRWA rot verwendet (gemeinsame Anode).
+
+![7-Segment](https://github.com/petersieg/Mini-Z80/blob/master/7-segment.jpg)
+
+
