@@ -22,7 +22,7 @@ IC5      4093N          DIL14        40xx          (1.5 1.2)             R0
 IC6      74HCT32N       DIL14        74xx-eu       (2.4 1.2)             R0
 IC7      74HCT374N      DIL20        74xx-eu       (3.4 1.75)            R0
 IN                      1X08         pinhead       (3.35 0.8)            R180
-LED1     LA-401AD       LA-401       led-7-segment (3.4 2.8)             R90
+LED1     7-SEGM*        7-SEGM       led-7-segment (3.4 2.8)             R90
 LED2     green          LED3MM       led           (0.15 2.7)            R0
 LED3     red            LED3MM       led           (0.15 2.45)           R0
 LED4     yellow         LED3MM       led           (0.15 2.2)            R0
@@ -41,3 +41,16 @@ R10      560            0204/7       resistor      (0.1 1.8)             R90
 R11      560            0204/7       resistor      (0.1 1.35)            R90
 R12      10k            0204/7       resistor      (0.2 1.35)            R270
 RES                     JP1          jumper        (0.15 1.1)            R90
+
+
+Eg: GNS-3611BD, SA36-11SRWA, SA36-11EWA - Common anode at 1,6: A=10; B=9; C=8; 7=DP; D=5; E=4; G=3; F=2
+;ledX   defb  1gfedcbab     --a--
+;                           |   |
+;                           f   b
+;                           |   |
+;                           --g--
+;                           |   |
+;                           e   c
+;                           |   |
+;                           --d--
+
