@@ -96,7 +96,7 @@ Ich habe zuletzt GNS-3611BD genommen (Wichtig: B!). Ich habe davor von Conrad: K
 ![7-Segment](https://github.com/petersieg/Mini-Z80/blob/master/7-segment.jpg)
 
 
-8k SRam verwenden (Natürlich hat man dann nur 8KB RRam, der 4x im 32KB Adressbereich gespiegelt ist):
+8k SRam verwenden (Natürlich hat man dann nur 8KB SRam, der 4x im 32KB Adressbereich gespiegelt ist):
 
 ![sram](https://github.com/petersieg/Mini-Z80/blob/master/sram.png)
 
