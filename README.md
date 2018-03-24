@@ -35,6 +35,9 @@ EDIT2: Neue PCB aufgebaut und getestet - alles ist nun ok! Daher bitte NUR die n
 Anstatt 27C256 sollte sich der Pinkompatible AT29C256 Flash verwenden können.
 Beim AT28C256 sind Änderungen erforderlich (A14 umlegen + /WE auf +5V legen)
 
+EDIT3: Habe die PCB noch etwas erweitert. Dezimalpunkt ist nun auch angeschlossen. Und Pullup Array am Input Port inkl. GND+VCC.
+PCB Dateien sind im Mini-Z80-v3.zip. Top+Bot.png zeigen die Änderungen für 28C256. Rot = trennen. Grün = verbinden.
+
 Die beschriebenen Testprogramme sind im z80 mini software.zip
 
 Als Assembler diente der Arnold Assembler: http://john.ccac.rwth-aachen.de:8000/as/
