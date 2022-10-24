@@ -1,0 +1,8 @@
+0000                1 	org 200h
+0200                2 
+0200 3e 00          3 	ld	a,0
+0202 3c             4 loop:	inc	a
+0203 32 09 02       5 	ld	(value),a
+0206 c3 02 02       6 	jp	loop
+0209 00             7 value:	defb	0
+10 bytes code generated and 2 labels defined
